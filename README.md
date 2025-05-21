@@ -82,6 +82,8 @@ Required environment variables:
 
 ## Testing
 
+🚧 **Work in Progress:** The testing framework is currently under development. 🚧
+
 REST2MCP uses pytest for testing. The tests are located in the `tests/` directory.
 
 ### Running tests
