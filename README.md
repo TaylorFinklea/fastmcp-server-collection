@@ -33,7 +33,7 @@ cp .env.example .env
 
 ## Usage
 
-FastMCP Server Collection provides servers for different APIs. See [https://gofastmcp.com/deployment/cli] for more information.
+FastMCP Server Collection provides servers for different APIs. See [FastMCP CLI documentation](https://gofastmcp.com/deployment/cli) for more information.
 
 You can run a specific server using:
 
@@ -75,7 +75,7 @@ Required environment variables:
 
 ### Adding new servers
 
-1. Create a new Python file in the `fastmcp_server_collection/servers/` directory. See [https://gofastmcp.com/servers/fastmcp] for more information.
+1. Create a new Python file in the `fastmcp_server_collection/servers/` directory. See [FastMCP Server documentation](https://gofastmcp.com/servers/fastmcp) for more information.
 2. Implement the necessary functionality using FastMCP
 3. Ensure your file includes code that starts the FastMCP server when run directly
 4. Update the server registry in the README to include your new server
