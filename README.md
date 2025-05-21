@@ -11,7 +11,7 @@ FastMCP Server Collection provides a set of ready-to-use FastMCP servers that al
 ### Requirements
 
 - Python 3.11
-- uv (recommended) or pip
+- uv
 
 ### Install from source
 
@@ -20,25 +20,45 @@ FastMCP Server Collection provides a set of ready-to-use FastMCP servers that al
 git clone https://github.com/TaylorFinklea/fastmcp-server-collection.git
 cd fastmcp-server-collection
 
+# Create a virtual environment
+uv venv --python 3.11
+source .venv/bin/activate
+
 # Install with uv
 uv pip install -e .
 
-# Or with pip
-# pip install -e .
+# Create a .env file
+cp .env.example .env
 ```
 
 ## Usage
 
-FastMCP Server Collection provides servers for different APIs. You can run a specific server using:
+FastMCP Server Collection provides servers for different APIs. See [https://gofastmcp.com/deployment/cli] for more information.
+
+You can run a specific server using:
+
+### Run a local streamable http server
 
 ```bash
-python -m fastmcp_server_collection -s <server_name>
+fastmcp run servers/<server_name>.py:mcp --transport streamable-http
 ```
 
-For example, to run the Skyvern server:
+For example, to run the Skyvern server as a streamable http server:
 
 ```bash
-python -m fastmcp_server_collection -s skyvern
+fastmcp run servers/skyvern.py:mcp --transport streamable-http
+```
+
+### Install a server to Claude Desktop
+
+```bash
+fastmcp install servers/<server_name>.py:mcp --env-file .env
+```
+
+For example, to install the Skyvern server:
+
+```bash
+fastmcp install servers/skyvern.py:mcp --env-file .env
 ```
 
 ## Available Servers
@@ -55,10 +75,10 @@ Required environment variables:
 
 ### Adding new servers
 
-1. Create a new Python file in the `fastmcp_server_collection/servers/` directory
+1. Create a new Python file in the `fastmcp_server_collection/servers/` directory. See [https://gofastmcp.com/servers/fastmcp] for more information.
 2. Implement the necessary functionality using FastMCP
 3. Ensure your file includes code that starts the FastMCP server when run directly
-4. Update the server registry to include your new server
+4. Update the server registry in the README to include your new server
 
 ## Testing
 
