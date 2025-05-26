@@ -40,7 +40,7 @@ You can run a specific server using:
 ### Run a local streamable http server
 
 ```bash
-fastmcp run servers/<server_name>.py:mcp --transport streamable-http
+fastmcp run servers/<server_name>.py:mcp --transport streamable-http # possible values: stdio, streamable-http, sse
 ```
 
 For example, to run the Skyvern server as a streamable http server:
@@ -58,6 +58,8 @@ fastmcp install servers/<server_name>.py:mcp --env-file .env
 For example, to install the Skyvern server:
 
 ```bash
+# open Claude Desktop > go to Settings > Developer > Edit Config
+# saves to /Users/YOURUSER/Library/Application Support/Claude on macOS
 fastmcp install servers/skyvern.py:mcp --env-file .env
 ```
 
